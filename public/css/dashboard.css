@@ -1,0 +1,142 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Tiêu đề chính */
+h1 {
+    color: #333;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* Tiêu đề phụ */
+h4 {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* Vai trò */
+p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* Danh sách nút */
+.row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.col-md-4 {
+    width: 100%;
+}
+
+/* Nút điều hướng */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    color: white;
+}
+
+/* Màu sắc cho các nút */
+.btn-primary { background: #007bff; }
+.btn-primary:hover { background: #0056b3; }
+
+.btn-success { background: #28a745; }
+.btn-success:hover { background: #218838; }
+
+.btn-warning { background: #ffc107; color: #333; }
+.btn-warning:hover { background: #e0a800; }
+
+.btn-danger { background: #dc3545; }
+.btn-danger:hover { background: #c82333; }
+
+.btn-purple { background: #6f42c1; }
+.btn-purple:hover { background: #5936a2; }
+
+.btn-info { background: #17a2b8; }
+.btn-info:hover { background: #138496; }
+
+.btn-pink { background: #e83e8c; }
+.btn-pink:hover { background: #d81b60; }
+
+.btn-red { background: #ff3d00; }
+.btn-red:hover { background: #d32f2f; }
+
+.btn-green { background: #28a745; }
+.btn-green:hover { background: #1e7e34; }
+
+.btn-teal { background: #20c997; }
+.btn-teal:hover { background: #198754; }
+
+/* Đăng xuất */
+.text-center .btn-danger {
+    width: auto;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+/* Hiệu ứng xuất hiện */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
