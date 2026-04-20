@@ -1,36 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Thêm địa chỉ</title>
-    <link rel="stylesheet" href="{{asset('css/locations/create.css')}}">
-</head>
-<body>
-    <div class="container">
-    <h2>{{ isset($location) ? 'Chỉnh sửa' : 'Thêm' }} Địa chỉ</h2>
+@extends('dashboard.index')
 
-<form action="{{ isset($location) ? route('locations.update', $location->id) : route('locations.store') }}" method="POST">
-    @csrf
-    @if(isset($location)) @method('PUT') @endif
+@section('title', 'Thêm địa chỉ')
 
-    <div class="mb-3">
-        <label class="form-label">Địa chỉ:</label>
-        <input type="text" name="address" class="form-control" value="{{ $location->address ?? '' }}" required>
+@push('styles')
+<link rel="stylesheet" href="{{ asset('css/locations/create.css') }}">
+@endpush
+
+@section('content')
+
+<div class="location-page">
+
+    <div class="form-box card">
+
+        <h2>Thêm địa chỉ</h2>
+
+        <form action="{{ route('locations.store') }}" method="POST">
+            @csrf
+
+            <div class="input-group">
+                <input type="text" name="address" placeholder="Nhập địa chỉ" required>
+            </div>
+
+            <div class="input-group">
+                <input type="url" name="google_map_link" placeholder="Link Google Map" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Thêm</button>
+            <a href="{{ route('locations.index') }}" class="btn-cancel">Hủy</a>
+
+        </form>
+
     </div>
 
-    <div class="mb-3">
-        <label class="form-label">Google Map Link:</label>
-        <input type="url" name="google_map_link" class="form-control" value="{{ $location->google_map_link ?? '' }}" required>
-    </div>
+</div>
 
-    <button type="submit" class="btn btn-success">{{ isset($location) ? 'Cập nhật' : 'Thêm mới' }}</button>
-    <a href="{{ route('locations.index') }}" class="btn btn-secondary">Hủy</a>
-
-</form>
-    </div>
-</body>
-</html>
-
-
+@endsection

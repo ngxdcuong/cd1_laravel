@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>@yield('title', 'Quản lý quán cà phê')</title>
+
+    <!-- CSS chính -->
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+
+    <!-- Cho phép page con thêm CSS -->
+    @stack('styles')
 </head>
 <body>
 
@@ -78,6 +83,9 @@
     </div>
 
 </div>
+
+<!-- Cho phép page con thêm JS -->
+@stack('scripts')
 
 </body>
 </html>

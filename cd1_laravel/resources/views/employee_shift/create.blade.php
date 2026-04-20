@@ -1,60 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Thêm Phân Công</title>
-    <link rel="stylesheet" href="{{ asset('css/employee_shift/create.css') }}">
-</head>
-<body>
-    <div class="container">
-        <h2>Phân Công Ca Làm Việc</h2>
-    
-        {{-- Hiển thị thông báo lỗi --}}
+@extends('dashboard.index')
+
+@section('title', 'Phân công ca làm')
+
+@push('styles')
+<link rel="stylesheet" href="{{ asset('css/employee_shift/create.css') }}">
+@endpush
+
+@section('content')
+
+<div class="shift-page">
+
+    <div class="form-box card">
+
+        <h2>Phân công ca làm</h2>
+
         @if(session('error'))
             <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
-    
-        {{-- Hiển thị thông báo thành công --}}
+
         @if(session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
+
         <form action="{{ route('employee_shift.store') }}" method="POST">
             @csrf
-    
-            {{-- Chọn nhân viên --}}
-            <div class="mb-3">
-                <label class="form-label">Nhân Viên</label>
-                <select name="employee_id" class="form-control" required>
-                    <option value="">-- Chọn Nhân Viên --</option>
+
+            <div class="input-group">
+                <select name="employee_id" required>
+                    <option value="">-- Chọn nhân viên --</option>
                     @foreach($employees as $employee)
                         <option value="{{ $employee->id }}">{{ $employee->full_name }}</option>
                     @endforeach
                 </select>
             </div>
-    
-            {{-- Chọn ca làm --}}
-            <div class="mb-3">
-                <label class="form-label">Ca Làm Việc</label>
-                <select name="shift_id" class="form-control" required>
-                    <option value="">-- Chọn Ca Làm --</option>
+
+            <div class="input-group">
+                <select name="shift_id" required>
+                    <option value="">-- Chọn ca --</option>
                     @foreach($shifts as $shift)
-                        <option value="{{ $shift->id }}">{{ $shift->name }} ({{ $shift->start_time }} - {{ $shift->end_time }})</option>
+                        <option value="{{ $shift->id }}">
+                            {{ $shift->name }} ({{ $shift->start_time }} - {{ $shift->end_time }})
+                        </option>
                     @endforeach
                 </select>
             </div>
-    
-            {{-- Chọn ngày làm việc --}}
-            <div class="mb-3">
-                <label class="form-label">Ngày Làm Việc</label>
-                <input type="date" name="work_date" class="form-control" required>
-            </div>
-    
-            <button type="submit" class="btn btn-success">Phân Công</button>
-            <a href="{{ route('employee_shift.index') }}" class="btn btn-secondary">Hủy</a>
-        </form>
-    </div>
-</body>
-</html>
 
+            <div class="input-group">
+                <input type="date" name="work_date" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Phân công</button>
+            <a href="{{ route('employee_shift.index') }}" class="btn-cancel">Hủy</a>
+        </form>
+
+    </div>
+
+</div>
+
+@endsection

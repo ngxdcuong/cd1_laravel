@@ -1,87 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Thêm Nhân Viên</title>
-    <link rel="stylesheet" href="{{asset('css/employees/create.css')}}">
+@extends('dashboard.index')
 
-</head>
-<body>
-    
-<div class="container">
-    <h2>Thêm Nhân Viên</h2>
-    <form action="{{ route('employees.store') }}" method="POST">
-        @csrf
+@section('title', 'Thêm nhân viên')
 
-        <div class="form-group">
-            <label>Họ và tên:</label>
-            <input type="text" name="full_name" class="form-control" required>
-        </div>
+@push('styles')
+<link rel="stylesheet" href="{{ asset('css/employees/create.css') }}">
+@endpush
 
-        <div class="form-group">
-            <label>Email:</label>
-            <input type="email" name="email" class="form-control">
-        </div>
+@section('content')
 
-        <div class="form-group">
-            <label>Số điện thoại:</label>
-            <input type="text" name="phone" class="form-control">
-        </div>
+<div class="employee-page">
 
-        <div class="form-group">
-            <label>Địa chỉ:</label>
-            <input type="text" name="address" class="form-control">
-        </div>
+    <div class="form-box card">
 
-        <div class="form-group">
-            <label>Ngày sinh:</label>
-            <input type="date" name="dob" class="form-control">
-        </div>
+        <h2>Thêm nhân viên</h2>
 
-        <div class="form-group">
-            <label>Giới tính:</label>
-            <select name="gender" class="form-control">
-                <option value="Nam">Nam</option>
-                <option value="Nữ">Nữ</option>
-                <option value="Khác">Khác</option>
-            </select>
-        </div>
+        <form action="{{ route('employees.store') }}" method="POST">
+            @csrf
 
-        <div class="form-group">
-            <label>Chức vụ:</label>
-            <select name="position_id" class="form-control">
-                <option value="">-- Chọn chức vụ --</option>
-                @foreach($positions as $position)
-                    <option value="{{ $position->id }}">{{ $position->name }}</option>
-                @endforeach
-            </select>
-        </div>
+            <div class="input-group"><input type="text" name="full_name" placeholder="Họ và tên" required></div>
+            <div class="input-group"><input type="email" name="email" placeholder="Email"></div>
+            <div class="input-group"><input type="text" name="phone" placeholder="Số điện thoại"></div>
+            <div class="input-group"><input type="text" name="address" placeholder="Địa chỉ"></div>
+            <div class="input-group"><input type="date" name="dob"></div>
 
-        <div class="form-group">
-            <label>Lương:</label>
-            <input type="number" name="salary" class="form-control">
-        </div>
+            <div class="input-group">
+                <select name="gender">
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                    <option value="Khác">Khác</option>
+                </select>
+            </div>
 
-        <div class="form-group">
-            <label>Ngày vào làm:</label>
-            <input type="date" name="hire_date" class="form-control">
-        </div>
+            <div class="input-group">
+                <select name="position_id">
+                    <option value="">-- Chức vụ --</option>
+                    @foreach($positions as $position)
+                        <option value="{{ $position->id }}">{{ $position->name }}</option>
+                    @endforeach
+                </select>
+            </div>
 
-        <div class="form-group">
-            <label>Trạng thái:</label>
-            <select name="status" class="form-control">
-                <option value="active">Đang làm việc</option>
-                <option value="inactive">Nghỉ việc</option>
-            </select>
-        </div>
+            <div class="input-group"><input type="number" name="salary" placeholder="Lương"></div>
+            <div class="input-group"><input type="date" name="hire_date"></div>
 
-        <button type="submit" class="btn btn-success mt-2">Thêm nhân viên</button>
-        <a href="{{ route('employees.index') }}" class="btn btn-secondary">Hủy</a>
+            <div class="input-group">
+                <select name="status">
+                    <option value="active">Đang làm</option>
+                    <option value="inactive">Nghỉ</option>
+                </select>
+            </div>
 
-    </form>
+            <button type="submit" class="btn-submit">Thêm</button>
+            <a href="{{ route('employees.index') }}" class="btn-cancel">Hủy</a>
+        </form>
+
+    </div>
+
 </div>
 
-</body>
-</html>
+@endsection

@@ -1,123 +1,65 @@
-/* Reset mặc định */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-/* Body */
-body {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-}
-
-/* Container */
-.container {
-    background: white;
+.form-box {
+    max-width: 500px;
+    margin: 0 auto;
     padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 600px;
-    animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Tiêu đề */
-h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-/* Form nhóm */
-.form-group {
+.input-group {
     margin-bottom: 15px;
 }
 
-/* Nhãn */
-label {
-    font-weight: 600;
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-/* Input và Select */
-.form-control {
+.input-group input,
+.input-group textarea,
+.input-group select {
     width: 100%;
     padding: 10px;
+    border-radius: 6px;
     border: 1px solid #ccc;
-    border-radius: 6px;
     font-size: 14px;
-    transition: 0.3s ease-in-out;
 }
 
-.form-control:focus {
-    border-color: #007bff;
+.input-group textarea {
+    resize: vertical;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #3498db;
     outline: none;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
 }
 
-/* Nút bấm */
-.btn {
-    display: inline-block;
+/* Button */
+.btn-submit {
     width: 100%;
-    padding: 12px;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: 600;
-    text-align: center;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
+    padding: 10px;
+    background: #e91e63;
+    color: white;
     border: none;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.btn-success {
-    background: #ed4e7b;
-    color: white;
-}
-
-.btn-secondary {
-    background: #13784e;
-    color: white;
-    display: block;
-    text-align: center;
+    border-radius: 6px;
     margin-bottom: 10px;
 }
 
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+.btn-submit:hover {
+    background: #c2185b;
 }
 
-/* Hiệu ứng xuất hiện */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.btn-cancel {
+    display: block;
+    text-align: center;
+    background: #6c757d;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    text-decoration: none;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .container {
-        width: 95%;
-        padding: 15px;
-    }
+.btn-cancel:hover {
+    background: #5a6268;
+}
 
-    .btn {
-        font-size: 14px;
-        padding: 10px;
-    }
+/* Preview image */
+.preview-img {
+    margin-top: 10px;
+    width: 120px;
+    border-radius: 8px;
 }
