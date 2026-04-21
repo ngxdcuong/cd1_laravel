@@ -1,0 +1,137 @@
+.about-section {
+    display: flex;
+    align-items: center;
+    padding: 50px 0;
+}
+.about-section:nth-child(even) {
+    background-color: #c49a6c;
+    color: white;
+}
+.about-section img {
+    width: 100%;
+    height: auto;
+}
+.about-content {
+    padding: 30px;
+}
+.about-title {
+    font-size: 32px;
+    font-weight: bold;
+}
+.about-btn {
+    margin-top: 20px;
+    border: 2px solid #c49a6c;
+    padding: 10px 20px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    color: #c49a6c;
+    background-color: transparent;
+}
+.about-section:nth-child(even) .about-btn {
+    border-color: white;
+    color: white;
+}
+.about-btn:hover {
+    background-color: #c49a6c;
+    color: white;
+}
+.about-section:nth-child(even) .about-btn:hover {
+    background-color: white;
+    color: #c49a6c;
+}
+
+.navbar {
+    background-color: #b0282c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5%;
+}
+
+.navbar-brand img {
+    height: 60px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu li a {
+    display: block;
+    padding: 8px 15px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+.nav-menu li a:hover,
+.nav-menu li.active a {
+    background-color: #4a2d1a;
+    border-radius: 5px;
+}
+
+/* ===== FOOTER STYLING ===== */
+.footer {
+    background: #5B3A29; /* Màu nâu tương tự hình */
+    color: white;
+    padding: 15px 0;
+    font-size: 14px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+/* Social Media Icons */
+.footer-social {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-social a img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Copyright */
+.footer-copyright {
+    font-size: 14px;
+    text-align: center;
+    flex: 1;
+}
+
+/* Contact & Newsletter */
+.footer-contact {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer-contact {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,19 @@
+.positions-page h2 {
+    color: black;
+}
+
+.positions-page table tr:hover {
+    background: #f5eef8;
+}
+
+/* Căn giữa ID */
+.positions-page td:first-child {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Mô tả chữ nhỏ hơn */
+.positions-page td:nth-child(3) {
+    font-size: 14px;
+    color: #555;
+}

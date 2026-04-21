@@ -1,0 +1,7 @@
+.users-page h2 {
+    color: black;
+}
+
+.users-page table tr:hover {
+    background: #eef6ff;
+}
