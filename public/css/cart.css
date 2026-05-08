@@ -1,0 +1,90 @@
+body {
+    font-family: Arial;
+    background: #f5f5f5;
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.cart-list {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item img {
+    width: 70px;
+}
+
+.info {
+    flex: 1;
+}
+
+.price {
+    color: red;
+    font-weight: bold;
+    width: 100px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+}
+
+.note {
+    margin-top: 20px;
+}
+
+.note input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.cart-footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#checkout-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #ccc;
+    color: white;
+    cursor: not-allowed;
+    transition: 0.3s;
+}
+
+#checkout-btn.active {
+    background: #28a745;
+    cursor: pointer;
+}

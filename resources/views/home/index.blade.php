@@ -41,7 +41,6 @@
                     </div>
                 @endforeach
             </div>
-            
         
             <!-- Tin mới nhất -->
             <div class="news-section">

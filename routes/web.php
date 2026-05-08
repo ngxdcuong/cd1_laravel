@@ -16,6 +16,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\RecruitmentController;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\CartController;
 
 Route::resource('locations', LocationController::class);
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -107,5 +108,8 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// 🔹 Các trang tĩnh khác
+
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
 Route::view('/careers', 'careers')->name('careers');

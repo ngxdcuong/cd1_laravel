@@ -31,7 +31,7 @@
                 <td>{{ $user->username }}</td>
                 <td>{{ ucfirst($user->role) }}</td>
                 <td>
-                    <a href="#" class="btn btn-warning">Sửa</a>
+                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning">Sửa</a>
                     <button class="btn btn-danger">Xóa</button>
                 </td>
             </tr>

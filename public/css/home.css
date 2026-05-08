@@ -369,3 +369,97 @@
         flex-direction: column;
     }
 }
+
+/* ===== MENU ===== */
+.menu-section {
+    margin-top: 40px;
+}
+
+.menu-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Grid */
+.menu-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Card */
+.menu-item {
+    background: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Ảnh */
+.menu-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+/* Tên */
+.menu-item h3 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+}
+
+/* Giá */
+.menu-item p {
+    color: #c0392b;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+/* Category */
+.menu-item .category {
+    font-size: 13px;
+    background: #f1f1f1;
+    padding: 5px 12px;
+    border-radius: 20px;
+    color: #555;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* ===== NÚT THÊM GIỎ ===== */
+.add-to-cart {
+    margin-top: auto;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #b02a2a;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-to-cart:hover {
+    background: #8e1f1f;
+    transform: scale(1.05);
+}
+
+/* Responsive nhỏ */
+@media (max-width: 768px) {
+    .menu-item img {
+        height: 140px;
+    }
+}
